@@ -66,6 +66,8 @@ input{
 
 img {
     border-radius: 0%;
+    height: 150px;
+    margin-top: 12px;
 }
 
 .btn-success {

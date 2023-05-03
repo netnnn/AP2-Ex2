@@ -1,61 +1,159 @@
-import './Register.css'
-import {Link} from 'react-router-dom';
+import "./Register.css";
+import users from "../Users_data/Users";
+
+import { Link } from "react-router-dom";
+import { useRef } from "react";
+
+
 
 function Register() {
-    return ( 
-        <>
-         <div id="upperBlock">
-                <img id="logo" src="Barmats-Web.png" alt="logo"></img>
-            </div>
-            <div id="lowerBlock"></div>
-            <div id="container">
+  const Name_input = useRef(null);
+  const Password_input = useRef(null);
+  const Verify_password_input = useRef(null);
+  const Nickname_input = useRef(null);
+  const Picture_input = useRef(null);
+  const Enter_link = useRef(null);
+  let imagesArray = [];
 
-               <div className="row">
-                    <label for="inputName" className="col-sm-3 col-form-label">Name</label>
-                    <div className="col-sm-9">
-                        <input type="text" className="form-control" id="inputName"></input>
-                    </div>
-                </div>
-                
-                <div className=" row">
-                    <label for="inputPassword" className="col-sm-3 col-form-label">Password</label>
-                    <div className="col-sm-9">
-                        <input type="password" className="form-control" id="inputPassword"></input>
-                    </div>
-                </div>
-                
-                <div className="row">
-                    <label for="inputVerifyPassword" className="col-sm-3 col-form-label">Verify Password</label>
-                    <div className="col-sm-9">
-                        <input type="password" className="form-control" id="inputVerifyPassword"></input>
-                    </div>
-                </div>
-                
-                <div className="row">
-                    <label for="inputDisplayName" className="col-sm-3 col-form-label">Nickname</label>
-                    <div className="col-sm-9">
-                        <input type="text" className="form-control" id="inputDisplayName"></input>
-                    </div>
-                </div>
+  function displayImages() {
+    let images = ""
+    imagesArray.forEach((image, index) => {
+      images = `<div class="image">
+                  <img src="${URL.createObjectURL(image)}" alt="image">
+                </div>`
+    })
+    document.getElementsByTagName("output")[0].innerHTML = images
+  }
 
-                <div className="row">
-                    <label for="inputPicture" className="col-sm-3 col-form-label">Picture</label>
-                    <div className="col-sm-9">
-                        <input type="file" className="form-control" id="inputPicture" accept="image/*"></input>
-                    </div>
-                    <img src="https://otakuusamagazine.com/wp-content/uploads/2021/10/light-death-note-480x360.jpeg" alt="example image upload"></img>
-                </div>
+  const validation = function () {
+    if (
+      Name_input.current.value == "" ||
+      Password_input.current.value == "" ||
+      Verify_password_input.current.value == "" ||
+      Nickname_input.current.value == "" ||
+      Picture_input.current.value == ""
+    ) {
+      console.log("one or more fields are empty");
+      return;
+    }
+    if (users.get(Name_input.current.value) != null) {
+      console.log("Name already taken");
+      return;
+    }
+    if (Password_input.current.value != Verify_password_input.current.value) {
+      console.log("passwords are not identicle");
+      return;
+    }
 
-                <div id="loginBlock" className="mb-4 row">
-                    <button id="login" className="btn btn-success col-sm-4">Sign up</button>
-                    <div className="register">
-                        Already registered? click <Link to="/Login">here</Link> to login
-                    </div>
-                </div>
+    users.set(Name_input.current.value, {
+      Password: Password_input.current.value,
+      Nickname: Nickname_input.current.value,
+      Picture: Picture_input.current.value,
+    });
+    console.log("user added succesfuly!");
+    Enter_link.current.click();
+  };
 
-            </div>
-        </>
-     );
+  return (
+    <>
+    <Link to="/Login" ref={Enter_link}></Link>
+      <div id="upperBlock">
+        <img id="logo" src="Barmats-Web.png" alt="logo"></img>
+      </div>
+      <div id="lowerBlock"></div>
+      <div id="container">
+        <div className="row">
+          <label for="inputName" className="col-sm-3 col-form-label">
+            Name
+          </label>
+          <div className="col-sm-9">
+            <input
+              type="text"
+              className="form-control"
+              id="inputName"
+              ref={Name_input}
+            ></input>
+          </div>
+        </div>
+
+        <div className=" row">
+          <label for="inputPassword" className="col-sm-3 col-form-label">
+            Password
+          </label>
+          <div className="col-sm-9">
+            <input
+              type="password"
+              className="form-control"
+              id="inputPassword"
+              ref={Password_input}
+            ></input>
+          </div>
+        </div>
+
+        <div className="row">
+          <label for="inputVerifyPassword" className="col-sm-3 col-form-label">
+            Verify Password
+          </label>
+          <div className="col-sm-9">
+            <input
+              type="password"
+              className="form-control"
+              id="inputVerifyPassword"
+              ref={Verify_password_input}
+            ></input>
+          </div>
+        </div>
+
+        <div className="row">
+          <label for="inputDisplayName" className="col-sm-3 col-form-label">
+            Nickname
+          </label>
+          <div className="col-sm-9">
+            <input
+              type="text"
+              className="form-control"
+              id="inputDisplayName"
+              ref={Nickname_input}
+            ></input>
+          </div>
+        </div>
+
+        <div className="row">
+          <label for="inputPicture" className="col-sm-3 col-form-label">
+            Picture
+          </label>
+          <div className="col-sm-9">
+            <input
+              type="file"
+              className="form-control"
+              id="inputPicture"
+              accept="image/*"
+              ref={Picture_input}
+              onChange={() => {
+                const file = Picture_input.current.files;
+                imagesArray.push(file[0]);
+                displayImages();
+              }}
+            ></input>
+          </div>
+          <output id="Image_div"></output>
+        </div>
+
+        <div id="loginBlock" className="mb-4 row">
+          <button
+            id="login"
+            className="btn btn-success col-sm-4"
+            onClick={validation}
+          >
+            Sign up
+          </button>
+          <div className="register">
+            Already registered? <Link to="/Login">click here</Link> to login
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Register;

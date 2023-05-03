@@ -1,7 +1,7 @@
 import "./Login.css";
 import users from "../Users_data/Users";
 
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 
 
@@ -12,7 +12,6 @@ function Login() {
   const Enter_link = useRef(null);
 
   const validation = function(){
-
     
     if (Name_input.current.value == "" || Password_input.current.value == "") {
       return;
@@ -22,7 +21,6 @@ function Login() {
     }
     if (users.get(Name_input.current.value).Password == Password_input.current.value ){
       console.log("yes");
-      // <Navigate to="http://localhost:3000/Main_screen"/>;
       Enter_link.current.click();
 
     }else{
@@ -72,7 +70,7 @@ function Login() {
             Login
           </button>
           <div className="register">
-            Not registered? click <Link to="/Register">here</Link> to register
+          Not registered? <Link to="/Register">click here</Link> to register
           </div>
         </div>
       </div>
