@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Message from "./Message/Message";
 import the_list from "../../../Chats.js";
 
@@ -7,6 +7,8 @@ function Chat_area() {
     var element = document.getElementById("chat_area");
     element.scrollTop = element.scrollHeight;
   });
+
+
 
   const msg_items = the_list.map((msg) => (
     <Message
