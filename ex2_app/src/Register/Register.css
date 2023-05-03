@@ -65,7 +65,6 @@ input{
 }
 
 img {
-    
     border-radius: 0%;
 }
 
@@ -78,8 +77,10 @@ img {
 
 #login {
     text-align: center;
-     position: relative;
-     left: 33.33%;
+    position: relative;
+    left: 0px;
+    right: 0px;
+    margin: auto;
 }
 
 #logo {

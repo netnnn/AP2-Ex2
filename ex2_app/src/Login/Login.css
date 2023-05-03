@@ -65,7 +65,9 @@ input{
     background-color: #00a884;
     text-align: center;
     position: relative;
-    left: 33.33%;
+    left: 0px;
+    right: 0px;
+    margin: auto;
 }
 .btn-success:hover {
     background-color: #008c6e;

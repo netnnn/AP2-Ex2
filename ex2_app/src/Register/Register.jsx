@@ -1,4 +1,5 @@
 import './Register.css'
+import {Link} from 'react-router-dom';
 
 function Register() {
     return ( 
@@ -48,7 +49,7 @@ function Register() {
                 <div id="loginBlock" className="mb-4 row">
                     <button id="login" className="btn btn-success col-sm-4">Sign up</button>
                     <div className="register">
-                        Already registered? click <a href="login.html">here</a> to login
+                        Already registered? click <Link to="/Login">here</Link> to login
                     </div>
                 </div>
 

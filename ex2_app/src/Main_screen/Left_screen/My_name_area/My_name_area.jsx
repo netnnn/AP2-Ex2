@@ -4,7 +4,7 @@ function My_name_area() {
   return (
     <>
       <div id="my_name_area" className="">
-        <img src="https://c4.wallpaperflare.com/wallpaper/106/962/482/death-note-lawliet-l-black-background-simple-wallpaper-preview.jpg"></img>
+        <img src="L-profile.jpg"></img>
         <span id="my_name">L</span>
         <button
           id="add_button"
