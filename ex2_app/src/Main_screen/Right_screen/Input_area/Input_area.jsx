@@ -1,3 +1,5 @@
+import './Input_area.css'
+
 import { useRef, useState, useEffect } from "react";
 import the_list from "../../../Chats";
 
@@ -26,7 +28,16 @@ function Input_area(props) {
     }
 
     let currDate = new Date();
-    let NowTime = currDate.getHours() + ":" + currDate.getMinutes();
+    let H = currDate.getHours();
+    let M = currDate.getMinutes();
+
+    if (currDate.getHours() < 10) {
+      H = "0" + currDate.getHours();
+    }
+    if (currDate.getMinutes() < 10) {
+      M = "0" + currDate.getMinutes();
+    }
+    let NowTime = H + ":" + M;
 
     the_list.push({
       from: "Light",
@@ -41,7 +52,7 @@ function Input_area(props) {
   }
 
   return (
-    <>
+    
       <div id="input_area">
         <input
           className="col-9 col-xl-11 col-lg-10 col-md-10 col-sm-10"
@@ -53,7 +64,7 @@ function Input_area(props) {
           <i className="bi bi-send"></i>
         </button>
       </div>
-    </>
+    
   );
 }
 

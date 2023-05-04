@@ -1,0 +1,113 @@
+.bubble{
+    width: min-content;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    text-align: left;
+
+}
+
+.bubble_first{
+    margin-top: auto;
+}
+
+.bubble_left{
+    background-color: aqua;
+
+}
+
+.bubble_right{
+    float: right;
+    background-color: firebrick;
+}
+
+.bubble_time {
+    color: #dededead;
+    font-size: small;
+}
+
+
+/* 
+  
+  .chat {
+    width: 300px;
+    border: solid 1px #EEE;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+   */
+
+  .message_row {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    padding: 10px;
+    margin-top: 0.4%;
+    width: fit-content;
+    display: inline-block;
+    word-break: break-all;
+    /* flex-direction: column; */
+
+
+  }
+  
+  
+  .mine .message {
+    color: rgb(255, 255, 255);
+    background-color: #1e705e;
+    position: relative;
+    border-radius: 18pt;
+    border-bottom-left-radius: 0px;
+    margin-left: 0.5%;
+    display: flex;
+    width: fit-content;
+    padding-right: 2%;
+
+  }
+
+  .mine .bubble_time {
+    position: relative;
+    font-size: x-small;
+    margin-top: auto;
+    width: fit-content;
+    margin-right: 7px;
+}
+  
+  .yours {
+    align-items: flex-end;
+  }
+  
+  .yours .message {
+    color: rgb(255, 255, 255);
+    /* margin-left: 25%; */
+    background: linear-gradient(to bottom, #818181 0%, #4e4e58 100%);
+    background-attachment: fixed;
+    position: relative;
+    border-radius: 18pt;
+    border-bottom-right-radius: 0px;
+    margin-right: 0.5%;
+    display: flex;
+    padding-left: 2%;
+  }
+
+.yours .bubble_time {
+    position: relative;
+    width: fit-content;
+    font-size: x-small;
+    margin-top: auto;
+    margin-left: 7px;
+}
+
+
+.bubble_info{
+    position:relative;
+    height: fit-content;
+    max-width: 400px;
+    /* width: calc(); */
+    /* white-space:nowrap; */
+    /* max-width: 30vh; */
+}
+

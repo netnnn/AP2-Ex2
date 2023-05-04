@@ -2,7 +2,7 @@ import "./Register.css";
 import users from "../Users_data/Users";
 
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 function Register() {
   const Name_input = useRef(null);
@@ -11,7 +11,39 @@ function Register() {
   const Nickname_input = useRef(null);
   const Picture_input = useRef(null);
   const Enter_link = useRef(null);
+  const btn = useRef(null);
   let imagesArray = [];
+
+  function PressEnter(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key == "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      btn.current.click();
+    }
+  }
+
+  useEffect(() => {
+    Name_input.current.addEventListener("keypress", function (event) {
+      PressEnter(event);
+    });
+    Password_input.current.addEventListener("keypress", function (event) {
+      PressEnter(event);
+    });
+    Verify_password_input.current.addEventListener(
+      "keypress",
+      function (event) {
+        PressEnter(event);
+      }
+    );
+    Nickname_input.current.addEventListener("keypress", function (event) {
+      PressEnter(event);
+    });
+    Picture_input.current.addEventListener("keypress", function (event) {
+      PressEnter(event);
+    });
+  });
 
   function displayImages() {
     let images = "";
@@ -61,7 +93,7 @@ function Register() {
       <div id="lowerBlock"></div>
       <div id="container">
         <div className="row">
-          <label for="inputName" className="col-sm-3 col-form-label">
+          <label htmlFor="inputName" className="col-sm-3 col-form-label">
             Name
           </label>
           <div className="col-sm-9">
@@ -75,7 +107,7 @@ function Register() {
         </div>
 
         <div className=" row">
-          <label for="inputPassword" className="col-sm-3 col-form-label">
+          <label htmlFor="inputPassword" className="col-sm-3 col-form-label">
             Password
           </label>
           <div className="col-sm-9">
@@ -89,7 +121,10 @@ function Register() {
         </div>
 
         <div className="row">
-          <label for="inputVerifyPassword" className="col-sm-3 col-form-label">
+          <label
+            htmlFor="inputVerifyPassword"
+            className="col-sm-3 col-form-label"
+          >
             Verify Password
           </label>
           <div className="col-sm-9">
@@ -103,7 +138,7 @@ function Register() {
         </div>
 
         <div className="row">
-          <label for="inputDisplayName" className="col-sm-3 col-form-label">
+          <label htmlFor="inputDisplayName" className="col-sm-3 col-form-label">
             Nickname
           </label>
           <div className="col-sm-9">
@@ -139,6 +174,7 @@ function Register() {
 
         <div id="loginBlock" className="mb-4 row">
           <button
+            ref={btn}
             id="login"
             className="btn btn-success col-sm-4"
             onClick={validation}

@@ -1,3 +1,5 @@
+import "./Chat_tile.css";
+
 function Chat_tile(props) {
   return (
     <>
