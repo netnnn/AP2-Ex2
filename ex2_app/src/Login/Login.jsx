@@ -2,38 +2,56 @@ import "./Login.css";
 import users from "../Users_data/Users";
 
 import { Link } from "react-router-dom";
-import { useRef } from "react";
-
-
+import { useRef, useEffect } from "react";
 
 function Login() {
   const Name_input = useRef(null);
   const Password_input = useRef(null);
   const Enter_link = useRef(null);
+  const btn = useRef(null);
 
-  const validation = function(){
-    
+  function PressEnter(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key == "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      btn.current.click();
+    }
+  }
+
+  useEffect(() => {
+    Name_input.current.addEventListener("keypress", function (event) {
+      PressEnter(event);
+    });
+    Password_input.current.addEventListener("keypress", function (event) {
+      PressEnter(event);
+    });
+  });
+
+  const validation = function () {
     if (Name_input.current.value == "" || Password_input.current.value == "") {
+      console.log("empty");
       return;
     }
     if (users.get(Name_input.current.value) == null) {
+      console.log("who???");
       return; //password or username are incorrect
     }
-    if (users.get(Name_input.current.value).Password == Password_input.current.value ){
+    if (
+      users.get(Name_input.current.value).Password ==
+      Password_input.current.value
+    ) {
       console.log("yes");
       Enter_link.current.click();
-
-    }else{
+    } else {
       console.log("no"); //password or username are incorrect
     }
-
-  } 
-  
-  
+  };
 
   return (
     <>
-    <Link to="/Main_screen" ref={Enter_link}></Link>
+      <Link to="/Main_screen" ref={Enter_link}></Link>
       <div id="upperBlock">
         <img id="logo" src="Barmats-Web.png" alt="logo"></img>
       </div>
@@ -66,11 +84,15 @@ function Login() {
           </div>
         </div>
         <div className="mb-4 row center">
-          <button className="btn btn-success col-sm-4" onClick={validation}>
+          <button
+            ref={btn}
+            className="btn btn-success col-sm-4"
+            onClick={validation}
+          >
             Login
           </button>
           <div className="register">
-          Not registered? <Link to="/Register">click here</Link> to register
+            Not registered? <Link to="/Register">click here</Link> to register
           </div>
         </div>
       </div>
