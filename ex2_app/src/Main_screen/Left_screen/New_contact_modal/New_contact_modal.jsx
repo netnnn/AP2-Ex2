@@ -1,3 +1,5 @@
+import './New_contact_modal.css'
+
 function New_contact_modal() {
   return (
     <>

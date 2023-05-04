@@ -64,7 +64,7 @@ input{
     
 }
 
-img {
+#Image_div>.image>img {
     border-radius: 0%;
     height: 150px;
     margin-top: 12px;
@@ -83,6 +83,7 @@ img {
     left: 0px;
     right: 0px;
     margin: auto;
+    border-radius: 0%;
 }
 
 #logo {

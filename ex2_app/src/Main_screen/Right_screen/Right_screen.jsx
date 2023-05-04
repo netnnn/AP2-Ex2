@@ -1,3 +1,4 @@
+import './Right_screen.css'
 import Corrent_chat_name_area from "./Corrent_chat_name_area/Corrent_chat_name_area";
 import Chat_area from "./Chat_area/Chat_area";
 import Input_area from "./Input_area/Input_area";

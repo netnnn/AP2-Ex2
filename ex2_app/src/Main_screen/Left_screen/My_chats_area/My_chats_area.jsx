@@ -1,3 +1,4 @@
+import './My_chats_area.css'
 import Chat_tile from "./Chat_tile/Chat_tile";
 
 function My_chats_area() {

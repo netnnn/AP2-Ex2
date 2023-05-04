@@ -1,0 +1,38 @@
+#input_area {
+    position: absolute;
+    background-color: rgb(42, 42, 42);
+    height: 50px;
+    bottom: 0px;
+    width: 100%;
+}
+
+#input_area>input {
+    position: relative;
+    height: 76%;
+    margin: 5px;
+    border-radius: 15pt;
+    padding-left: 2.3%;
+
+}
+
+#input_area>button {
+    /* position: relative; */
+    border-radius: 50%;
+    margin-bottom: 5px;
+    background-color: rgba(168, 110, 219, 0.349);
+
+    border: 1px;
+    /* width: 10%; */
+    border-color: #010202;
+    border-style: solid;
+
+
+}
+
+#input_area>button:hover {
+    background-color: rgba(104, 68, 136, 0.349);
+}
+
+#input_area>button:active {
+    background-color: rgba(44, 28, 57, 0.349);
+}

@@ -1,0 +1,64 @@
+.chat_tile {
+    border: 1px;
+    border-style: solid;
+    border-color: #b0b0b049;
+    /* border-radius: 6pt; */
+
+    background-color: #111b21;
+
+    height: 70px;
+    width: 100%;
+
+    position: relative;
+    align-items: center;
+    display: flex;
+}
+
+.chat_tile:hover {
+    background-color: #1f343ee8;
+}
+
+.chat_tile:active {
+    background-color: #192832;
+}
+
+.chat_tile>img {
+    border-radius: 100%;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    bottom: 0px;
+    top: 0px;
+}
+
+.chat_tile>.friend_name_and_last {
+    font-family: sans-serif;
+    font-size: x-large;
+    position: relative;
+    text-align: start;
+    margin-left: 5%;
+    color: rgb(223, 223, 223);
+    font-family: serif;
+    height: 100%;
+
+}
+
+
+.last_msg {
+    font-size: small;
+    color: #dededead;
+}
+
+.chat_tile>.friend_time {
+    width: min-content;
+    font-size: x-small;
+    color: #dededead;
+
+    position: relative;
+    /* float: right; */
+    right: 0px;
+    margin-right: 10px;
+    padding: auto;
+
+}

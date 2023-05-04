@@ -1,3 +1,5 @@
+import './Corrent_chat_name_area.css'
+
 function Corrent_chat_name_area() {
   return (
     <>

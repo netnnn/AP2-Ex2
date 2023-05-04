@@ -61,7 +61,7 @@ function Register() {
       <div id="lowerBlock"></div>
       <div id="container">
         <div className="row">
-          <label for="inputName" className="col-sm-3 col-form-label">
+          <label htmlFor="inputName" className="col-sm-3 col-form-label">
             Name
           </label>
           <div className="col-sm-9">
@@ -75,7 +75,7 @@ function Register() {
         </div>
 
         <div className=" row">
-          <label for="inputPassword" className="col-sm-3 col-form-label">
+          <label htmlFor="inputPassword" className="col-sm-3 col-form-label">
             Password
           </label>
           <div className="col-sm-9">
@@ -89,7 +89,7 @@ function Register() {
         </div>
 
         <div className="row">
-          <label for="inputVerifyPassword" className="col-sm-3 col-form-label">
+          <label htmlFor="inputVerifyPassword" className="col-sm-3 col-form-label">
             Verify Password
           </label>
           <div className="col-sm-9">
@@ -103,7 +103,7 @@ function Register() {
         </div>
 
         <div className="row">
-          <label for="inputDisplayName" className="col-sm-3 col-form-label">
+          <label htmlFor="inputDisplayName" className="col-sm-3 col-form-label">
             Nickname
           </label>
           <div className="col-sm-9">
