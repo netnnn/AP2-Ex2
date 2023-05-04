@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function Right_screen() {
 
-  const [Details, SetDetails] = useState(0);
+  const [Details, SetDetails] = useState(true);
 
   return (
     <>

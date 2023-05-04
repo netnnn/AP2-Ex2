@@ -1,18 +1,12 @@
 import { useRef, useState, useEffect } from "react";
 import the_list from "../../../Chats";
 
-
-
 function Input_area(props) {
-
-
-
   const input = useRef(null);
   const btn_ref = useRef(null);
 
-
   useEffect(() => {
-    input.current.addEventListener("keypress", function(event) {
+    input.current.addEventListener("keypress", function (event) {
       // If the user presses the "Enter" key on the keyboard
       if (event.key == "Enter") {
         // Cancel the default action, if needed
@@ -21,26 +15,31 @@ function Input_area(props) {
         btn_ref.current.click();
       }
     });
-  
   });
-  
+
   function Send_msg() {
-    if (input.current.value == ""){
+    if (input.current.value == "") {
       return;
     }
-    if(input.current.value.split(' ').join('') == ""){
+    if (input.current.value.split(" ").join("") == "") {
       return;
     }
-    the_list.push(
-      {from: 'Light',to: 'L', text:  input.current.value  ,time: '10:30'}
-    );
-    
-    props.setState(the_list.length);
+
+    let currDate = new Date();
+    let NowTime = currDate.getHours() + ":" + currDate.getMinutes();
+
+    the_list.push({
+      from: "Light",
+      to: "L",
+      text: input.current.value,
+      time: NowTime,
+    });
+
+    props.setState(!props.state);
     input.current.value = "";
     console.log(props.state);
   }
 
-  
   return (
     <>
       <div id="input_area">
