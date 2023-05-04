@@ -4,8 +4,6 @@ import users from "../Users_data/Users";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
-
-
 function Register() {
   const Name_input = useRef(null);
   const Password_input = useRef(null);
@@ -16,13 +14,13 @@ function Register() {
   let imagesArray = [];
 
   function displayImages() {
-    let images = ""
+    let images = "";
     imagesArray.forEach((image, index) => {
       images = `<div class="image">
                   <img src="${URL.createObjectURL(image)}" alt="image">
-                </div>`
-    })
-    document.getElementsByTagName("output")[0].innerHTML = images
+                </div>`;
+    });
+    document.getElementsByTagName("output")[0].innerHTML = images;
   }
 
   const validation = function () {
@@ -56,7 +54,7 @@ function Register() {
 
   return (
     <>
-    <Link to="/Login" ref={Enter_link}></Link>
+      <Link to="/" ref={Enter_link}></Link>
       <div id="upperBlock">
         <img id="logo" src="Barmats-Web.png" alt="logo"></img>
       </div>
@@ -148,7 +146,7 @@ function Register() {
             Sign up
           </button>
           <div className="register">
-            Already registered? <Link to="/Login">click here</Link> to login
+            Already registered? <Link to="/">click here</Link> to login
           </div>
         </div>
       </div>
