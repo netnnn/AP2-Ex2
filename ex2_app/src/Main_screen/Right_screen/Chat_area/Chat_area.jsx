@@ -12,11 +12,12 @@ function Chat_area() {
 
 
 
-  const msg_items = the_list.map((msg) => (
+  const msg_items = the_list.map((msg, key) => (
     <Message
       who={msg.from == "L" ? "mine" : "yours"}
       time={msg.time}
       msg={msg.text}
+      key={key}
     />
   ));
 
