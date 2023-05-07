@@ -5,12 +5,20 @@ import Register from "./Register/Register";
 import Login from "./Login/Login";
 
 function App() {
+  const [LoggedUser, SetLoggedUser] = useState("");
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />}></Route>
+        <Route
+          path="/"
+          element={<Login SetLoggedUser={SetLoggedUser} />}
+        ></Route>
         <Route path="/Register" element={<Register />}></Route>
-        <Route path="/Main_screen" element={<Main_screen />}></Route>
+        <Route
+          path="/Main_screen"
+          element={<Main_screen LoggedUser={LoggedUser} />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
