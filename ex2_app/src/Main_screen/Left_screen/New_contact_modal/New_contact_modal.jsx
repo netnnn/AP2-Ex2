@@ -1,4 +1,4 @@
-import './New_contact_modal.css'
+import "./New_contact_modal.css";
 
 function New_contact_modal() {
   return (
@@ -7,7 +7,7 @@ function New_contact_modal() {
       <div
         className="modal fade"
         id="add_new_contact_modal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >

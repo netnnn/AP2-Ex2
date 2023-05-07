@@ -4,7 +4,7 @@ import users from "../Users_data/Users";
 import { Link } from "react-router-dom";
 import { useRef, useEffect } from "react";
 
-function Login() {
+function Login(props) {
   const Name_input = useRef(null);
   const Password_input = useRef(null);
   const Enter_link = useRef(null);
@@ -43,6 +43,7 @@ function Login() {
       Password_input.current.value
     ) {
       console.log("yes");
+      props.SetLoggedUser(Name_input.current.value);
       Enter_link.current.click();
     } else {
       console.log("no"); //password or username are incorrect
@@ -58,7 +59,7 @@ function Login() {
       <div id="lowerBlock"></div>
       <div id="container">
         <div className="mb-4 row">
-          <label for="inputName" className="col-sm-3 col-form-label">
+          <label htmlFor="inputName" className="col-sm-3 col-form-label">
             Name
           </label>
           <div className="col-sm-9">
@@ -71,7 +72,7 @@ function Login() {
           </div>
         </div>
         <div className="mb-4 row">
-          <label for="inputPassword" className="col-sm-3 col-form-label">
+          <label htmlFor="inputPassword" className="col-sm-3 col-form-label">
             Password
           </label>
           <div className="col-sm-9">

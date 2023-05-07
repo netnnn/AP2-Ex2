@@ -91,7 +91,7 @@ function Register() {
         <img id="logo" src="Barmats-Web.png" alt="logo"></img>
       </div>
       <div id="lowerBlock"></div>
-      <div id="container">
+      <div id="Register-container">
         <div className="row">
           <label htmlFor="inputName" className="col-sm-3 col-form-label">
             Name
@@ -152,7 +152,7 @@ function Register() {
         </div>
 
         <div className="row">
-          <label for="inputPicture" className="col-sm-3 col-form-label">
+          <label htmlFor="inputPicture" className="col-sm-3 col-form-label">
             Picture
           </label>
           <div className="col-sm-9">
