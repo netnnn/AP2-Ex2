@@ -53,7 +53,7 @@ function Login(props) {
   return (
     <>
       <Link to="/Main_screen" ref={Enter_link}></Link>
-      <div id="upperBlock">
+      <div id="upperBlockLogin">
         <img id="logo" src="Barmats-Web.png" alt="logo"></img>
       </div>
       <div id="lowerBlock"></div>
