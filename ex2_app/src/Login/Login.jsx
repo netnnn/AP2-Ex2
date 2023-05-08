@@ -47,6 +47,8 @@ function Login(props) {
       Enter_link.current.click();
     } else {
       console.log("no"); //password or username are incorrect
+      console.log(users.get("watari").getName());
+      console.log(Password_input.current.value);
     }
   };
 
