@@ -72,9 +72,13 @@ input{
     background-color: #008c6e;
 }
 
-#logo {
+#Login-Btn:active {
+    background-color: #007a60;
+}
+
+#logo-Login {
     position: absolute;
-    left: 79%;
+    right: 20vh;
     top: 0px;
     bottom: 0px;
     margin: auto;

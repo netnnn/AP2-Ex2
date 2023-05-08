@@ -87,10 +87,15 @@ input{
     border-radius: 0%;
 }
 
-#logo {
+#login:active {
+    background-color: #007a60;
+}
+
+#logo-Register {
     position: absolute;
-    left: 79%;
+    right: 20vh;
     top: 0px;
     bottom: 0px;
     margin: auto;
+    border-radius: 0%;
 }

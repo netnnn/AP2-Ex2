@@ -54,7 +54,7 @@ function Login(props) {
     <>
       <Link to="/Main_screen" ref={Enter_link}></Link>
       <div id="upperBlockLogin">
-        <img id="logo" src="Barmats-Web.png" alt="logo"></img>
+        <img id="logo-Login" src="Barmats-Web.png" alt="logo"></img>
       </div>
       <div id="lowerBlock"></div>
       <div id="container">
@@ -87,6 +87,7 @@ function Login(props) {
         <div className="mb-4 row center">
           <button
             ref={btn}
+            id="Login-Btn"
             className="btn btn-success col-sm-4"
             onClick={validation}
           >
