@@ -87,8 +87,8 @@ function Register() {
   return (
     <>
       <Link to="/" ref={Enter_link}></Link>
-      <div id="upperBlock">
-        <img id="logo" src="Barmats-Web.png" alt="logo"></img>
+      <div id="upperBlockRegister">
+        <img id="logo-Register" src="Barmats-Web.png" alt="logo"></img>
       </div>
       <div id="lowerBlock"></div>
       <div id="Register-container">

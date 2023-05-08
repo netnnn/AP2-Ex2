@@ -30,12 +30,13 @@ function New_contact_modal() {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary"
+                id="cancel"
+                className="btn btn-danger"
                 data-bs-dismiss="modal"
               >
                 Cancel
               </button>
-              <button type="button" className="btn btn-primary">
+              <button type="button" id="add" className="btn btn-warning">
                 Add contact
               </button>
             </div>
