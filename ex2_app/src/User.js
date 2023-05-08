@@ -5,9 +5,8 @@ class User {
     this.Name = props.Name;
     this.Password = props.Password;
     this.Nickname = props.Nickname;
-    this.Picture = props.picture;
+    this.Picture = props.Picture;
     this.Friends_Chat_List = new Map();
-    // console.log(Name)
   }
 
   getName() {
@@ -30,13 +29,19 @@ class User {
     return this.Friends_Chat_List;
   }
 
+  getFriend_Chat_List(Name) {
+    return this.Friends_Chat_List.get(Name);
+  }
+
   IsYourFriend(Name) {
     return this.Friends_Chat_List.get(Name) != null;
   }
 
   getLastMsgFrom(Name) {
     if (this.IsYourFriend(Name)) {
-      return this.Friends_Chat_List.get(Name)[-1].text;
+      return this.Friends_Chat_List.get(Name)[
+        this.Friends_Chat_List.get(Name).length - 1
+      ].text;
     }
   }
 
@@ -48,7 +53,9 @@ class User {
 
   getLastTimeFrom(Name) {
     if (this.IsYourFriend(Name)) {
-      return this.Friends_Chat_List.get(Name)[-1].time;
+      return this.Friends_Chat_List.get(Name)[
+        this.Friends_Chat_List.get(Name).length - 1
+      ].time;
     }
   }
 
@@ -64,11 +71,22 @@ class User {
     return "OK";
   }
 
+  AddNewMsgTo(Name, text, time) {
+    if (this.IsYourFriend(Name)) {
+      this.Friends_Chat_List.get(Name).push({
+        from: this.getName(),
+        to: Name,
+        text: text,
+        time: time,
+      });
+    }
+  }
+
   AddNewMsgFrom(Name, text, time) {
     if (this.IsYourFriend(Name)) {
-      this.Friends_Chat_List(Name).push({
-        from: this.getName,
-        to: Name,
+      this.Friends_Chat_List.get(Name).push({
+        from: Name,
+        to: this.getName(),
         text: text,
         time: time,
       });

@@ -1,7 +1,8 @@
-import './Input_area.css'
+import "./Input_area.css";
+import users from "../../../Users_data/Users";
 
 import { useRef, useState, useEffect } from "react";
-import the_list from "../../../Chats";
+// import the_list from "../../../Chats";
 
 function Input_area(props) {
   const input = useRef(null);
@@ -39,12 +40,12 @@ function Input_area(props) {
     }
     let NowTime = H + ":" + M;
 
-    the_list.push({
-      from: "Light",
-      to: "L",
-      text: input.current.value,
-      time: NowTime,
-    });
+    users
+      .get(props.LoggedUser)
+      .AddNewMsgTo(props.CurrentFriend, input.current.value, NowTime);
+    users
+      .get(props.CurrentFriend)
+      .AddNewMsgFrom(props.LoggedUser, input.current.value, NowTime);
 
     props.setState(!props.state);
     input.current.value = "";
@@ -52,19 +53,17 @@ function Input_area(props) {
   }
 
   return (
-    
-      <div id="input_area">
-        <input
-          className="col-9 col-xl-11 col-lg-10 col-md-10 col-sm-10"
-          type="text"
-          placeholder="New message here..."
-          ref={input}
-        ></input>
-        <button className="btn btn-primary" onClick={Send_msg} ref={btn_ref}>
-          <i className="bi bi-send"></i>
-        </button>
-      </div>
-    
+    <div id="input_area">
+      <input
+        className="col-9 col-xl-11 col-lg-10 col-md-10 col-sm-10"
+        type="text"
+        placeholder="New message here..."
+        ref={input}
+      ></input>
+      <button className="btn btn-primary" onClick={Send_msg} ref={btn_ref}>
+        <i className="bi bi-send"></i>
+      </button>
+    </div>
   );
 }
 

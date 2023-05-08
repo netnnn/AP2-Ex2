@@ -1,12 +1,18 @@
 import "./Chat_tile.css";
 
 function Chat_tile(props) {
+
+const SetCurrentFriend = () => {
+  props.SetCurrentFriend(props.Name);
+}
+
+
   return (
     <>
-      <div className="chat_tile ">
+      <div className="chat_tile" onClick={SetCurrentFriend}>
         <img src={props.img}></img>
         <div className="friend_name_and_last col">
-          <span>{props.name}</span>
+          <span>{props.Nickname}</span>
           <p className="last_msg">{props.last}</p>
         </div>
         <span className="friend_time col-2">{props.date}</span>

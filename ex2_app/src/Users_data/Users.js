@@ -7,7 +7,7 @@ users.set(
     Name: "Unknown",
     Password: "lll",
     Nickname: "L",
-    Picture: "L-Profiler.jpg",
+    Picture: "L-Profile.jpg",
   })
 );
 
@@ -51,54 +51,35 @@ users.set(
   })
 );
 
-// users.set("Unknown", {
-//   Password: "lll",
-//   Nickname: "L",
-//   Picture: "L-Profiler.jpg",
-//   FriendsList: new Map(),
-// });
+console.log(users);
+console.log();
+console.log();
 
-// users.set("yagami", {
-//   Password: "yyy",
-//   Nickname: "light",
-//   Picture: "yagami.jpg",
-//   FriendsList: new Map(),
-// });
+const WW = users.get("watari");
+const LL = users.get("Unknown");
+const MM = users.get("misa");
+const YY = users.get("yagami");
 
-// users.set("misa", {
-//   Password: "mmm",
-//   Nickname: "misa-misa",
-//   Picture: "misa.jpg",
-//   FriendsList: new Map(),
-// });
+WW.AddNewFriend("Unknown");
+LL.AddNewFriend("watari");
 
-// users.set("watari", {
-//   Password: "www",
-//   Nickname: "W",
-//   Picture: "watari.jpg",
-//   FriendsList: new Map(),
-// });
+WW.AddNewFriend("yagami");
+YY.AddNewFriend("watari");
 
-// users.set("matsuda", {
-//   Password: "mmm",
-//   Nickname: "touta",
-//   Picture: "matsuda.jpg",
-//   FriendsList: new Map(),
-// });
+WW.AddNewFriend("misa");
+MM.AddNewFriend("watari");
 
-console.log(users.get("watari"))
-console.log()
-console.log()
-console.log()
+WW.AddNewMsgFrom("Unknown", "hello W, i'm L", "15:30");
+LL.AddNewMsgTo("watari", "hello W, i'm L", "15:30");
 
-users.get("watari").AddNewFriend("L");
-users.get("watari").AddNewFriend("yagami");
-users.get("watari").AddNewFriend("misa");
-// users.get("L").AddNewFriend("watari");
-// users.get("yagami").AddNewFriend("watari");
-// users.get("misa").AddNewFriend("watari");
+LL.AddNewMsgFrom("watari", "hello L, i'm W", "15:30");
+WW.AddNewMsgTo("Unknown", "hello L, i'm W", "15:30");
 
+WW.AddNewMsgFrom("misa", "hello W, i'm misa", "15:30");
+MM.AddNewMsgTo("watari", "hello W, i'm misa", "15:30");
 
+MM.AddNewMsgFrom("watari", "hello misa, i'm W", "15:30");
+WW.AddNewMsgTo("misa", "hello misa, i'm W", "15:30");
 
 
 
