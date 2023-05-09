@@ -78,9 +78,16 @@ input{
 
 #logo-Login {
     position: absolute;
-    right: 20vh;
+    right: 10vh;
     top: 0px;
-    bottom: 0px;
+    bottom: 30%;
     margin: auto;
     border-radius: 0%;
+}
+
+#incorrect {
+    color: rgba(255, 0, 0, 0.733);
+    position: relative;
+    tab-size: 8;
+    line-height: 1.3;
 }

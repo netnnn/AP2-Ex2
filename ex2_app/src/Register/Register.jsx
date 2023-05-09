@@ -55,6 +55,54 @@ function Register() {
     document.getElementsByTagName("output")[0].innerHTML = images;
   }
 
+  const showRules = function() {
+    var rules = document.getElementById("rules");
+    rules.innerHTML =
+      "Password must be: - 8-15 charcters long<br> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; - have at least one uppercase and lowercase charcters<br>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; - contain at least one digit";
+  }
+
+  const cleanRules = function () {
+    var rules2 = document.getElementById("rules");
+    rules2.innerHTML = ""
+  }
+
+  const passwordIsValid = function() {
+    if (Password_input.current.value.length < 8 || Password_input.current.value.length > 15) {
+        return false;
+    }
+    var uppercase = /[A-Z]+/.test(Password_input.current.value);
+    var lowercase = /[a-z]+/.test(Password_input.current.value);
+    var hasDigit =  /[0-9]+/.test(Password_input.current.value);
+
+    if (uppercase == false || lowercase == false) {
+      return false;
+    }
+
+    if (hasDigit == false) {
+      return false;
+    }
+
+    return true;
+  }
+
+  const cleanEmpty = function () {
+    document.getElementById("emptyDiv").innerHTML = "";
+    document.getElementById("nameDiv").innerHTML = "";
+    document.getElementById("verifyDiv").innerHTML = "";
+  }
+
+  const cleanName = function () {
+    document.getElementById("nameDiv").innerHTML = "";
+    document.getElementById("emptyDiv").innerHTML = "";
+    document.getElementById("verifyDiv").innerHTML = "";
+  }
+
+  const cleanVerify = function () {
+    document.getElementById("verifyDiv").innerHTML = "";
+    document.getElementById("emptyDiv").innerHTML = "";
+    document.getElementById("nameDiv").innerHTML = "";
+  }
+
   const validation = function () {
     if (
       Name_input.current.value == "" ||
@@ -64,14 +112,32 @@ function Register() {
       Picture_input.current.value == ""
     ) {
       console.log("one or more fields are empty");
+      document.getElementById("emptyDiv").innerHTML = "one or more fields are empty";
+      Name_input.current.addEventListener("input", cleanEmpty);
+      Password_input.current.addEventListener("input", cleanEmpty);
+      Verify_password_input.current.addEventListener("input", cleanEmpty);
+      Nickname_input.current.addEventListener("input", cleanEmpty);
+      Picture_input.current.addEventListener("input", cleanEmpty);
       return;
     }
     if (users.get(Name_input.current.value) != null) {
       console.log("Name already taken");
+      document.getElementById("nameDiv").innerHTML = "Name already taken";
+      Name_input.current.addEventListener("input", cleanName);
       return;
     }
+
+    if(passwordIsValid() == false) {
+        showRules();
+        Password_input.current.addEventListener("input", cleanRules)
+        return;
+    }
+
     if (Password_input.current.value != Verify_password_input.current.value) {
       console.log("passwords are not identicle");
+      document.getElementById("verifyDiv").innerHTML = "passwords are not identicle";
+      Password_input.current.addEventListener("input", cleanVerify);
+      Verify_password_input.current.addEventListener("input", cleanVerify);
       return;
     }
 
@@ -103,6 +169,7 @@ function Register() {
               id="inputName"
               ref={Name_input}
             ></input>
+            <div id="nameDiv"></div>
           </div>
         </div>
 
@@ -117,13 +184,16 @@ function Register() {
               id="inputPassword"
               ref={Password_input}
             ></input>
+            <div id="rules">
+              
+            </div>
           </div>
         </div>
 
         <div className="row">
           <label
             htmlFor="inputVerifyPassword"
-            className="col-sm-3 col-form-label"
+            className="col-sm-3 col-form-label verify"
           >
             Verify Password
           </label>
@@ -134,6 +204,7 @@ function Register() {
               id="inputVerifyPassword"
               ref={Verify_password_input}
             ></input>
+            <div id="verifyDiv"></div>
           </div>
         </div>
 
@@ -168,6 +239,7 @@ function Register() {
                 displayImages();
               }}
             ></input>
+            <div id="emptyDiv"></div>
           </div>
           <output id="Image_div"></output>
         </div>

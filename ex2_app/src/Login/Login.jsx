@@ -29,24 +29,36 @@ function Login(props) {
     });
   });
 
+  const cleanIncorrect = function () {
+    var incorrect2 = document.getElementById("incorrect");
+    incorrect2.innerHTML = "";
+  }
+
   const validation = function () {
+    var incorrect = document.getElementById("incorrect");
     if (Name_input.current.value == "" || Password_input.current.value == "") {
       console.log("empty");
+      incorrect.innerHTML = "please fill all fields";
+      Name_input.current.addEventListener("input", cleanIncorrect);
+      Password_input.current.addEventListener("input", cleanIncorrect);
       return;
     }
     if (users.get(Name_input.current.value) == null) {
       console.log("who???");
+      incorrect.innerHTML = "username or password are incorrect";
+      Name_input.current.addEventListener("input", cleanIncorrect);
+      Password_input.current.addEventListener("input", cleanIncorrect);
       return; //password or username are incorrect
     }
-    if (
-      users.get(Name_input.current.value).Password ==
-      Password_input.current.value
-    ) {
+    if (users.get(Name_input.current.value).Password
+     == Password_input.current.value) {
       console.log("yes");
       props.SetLoggedUser(Name_input.current.value);
       Enter_link.current.click();
     } else {
-      console.log("no"); //password or username are incorrect
+      incorrect.innerHTML = "username or password are incorrect";
+      Name_input.current.addEventListener("input", cleanIncorrect);
+      Password_input.current.addEventListener("input", cleanIncorrect);
     }
   };
 
@@ -82,6 +94,7 @@ function Login(props) {
               id="inputPassword"
               ref={Password_input}
             ></input>
+            <div id="incorrect"></div>
           </div>
         </div>
         <div className="mb-4 row center">
