@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import Main_screen from "./Main_screen/Main_screen";
+
 import Register from "./Register/Register";
+import Main_screen from "./Main_screen/Main_screen";
 import Login from "./Login/Login";
 
 function App() {
