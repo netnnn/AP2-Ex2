@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function My_chats_area(props) {
   const Exit_link = useRef(null);
+  // const [] to do useState
 
   var { chats_items } = "<div></div>";
 
@@ -20,6 +21,7 @@ function My_chats_area(props) {
           img={users.get(key).getPicture()}
           Nickname={users.get(key).getNickname()}
           Name={users.get(key).getName()}
+          key={key}
           last={
             users.get(key).isChatWith(props.LoggedUser)
               ? users.get(key).getLastMsgFrom(props.LoggedUser)

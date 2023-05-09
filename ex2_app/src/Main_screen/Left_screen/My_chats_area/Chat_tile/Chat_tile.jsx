@@ -1,6 +1,6 @@
 import "./Chat_tile.css";
 
-function Chat_tile(props) {
+function Chat_tile(props, key) {
 
 const SetCurrentFriend = () => {
   props.SetCurrentFriend(props.Name);
@@ -9,7 +9,7 @@ const SetCurrentFriend = () => {
 
   return (
     <>
-      <div className="chat_tile" onClick={SetCurrentFriend}>
+      <div className="chat_tile" key={key} onClick={SetCurrentFriend}>
         <img src={props.img}></img>
         <div className="friend_name_and_last col">
           <span>{props.Nickname}</span>
