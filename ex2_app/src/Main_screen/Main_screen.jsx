@@ -5,15 +5,19 @@ import Right_screen from "./Right_screen/Right_screen";
 
 function Main_screen(props) {
   const [CurrentFriend, SetCurrentFriend] = useState("");
+  console.log(CurrentFriend + " is watched");
+
+  var logged = props.LoggedUser;
+
 
   return (
     <>
       <Left_screen
-        LoggedUser={props.LoggedUser}
+        LoggedUser={logged}
         SetCurrentFriend={SetCurrentFriend}
       />
       <Right_screen
-        LoggedUser={props.LoggedUser}
+        LoggedUser={logged}
         CurrentFriend={CurrentFriend}
       />
     </>

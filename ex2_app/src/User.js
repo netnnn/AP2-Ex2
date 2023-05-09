@@ -1,12 +1,12 @@
-import users from "./Users_data/Users";
+// import users from "./Users_data/Users";
 
 class User {
   constructor(props) {
-    var Name = props.Name;
-    var Password = props.Password;
-    var Nickname = props.Nickname;
-    var Picture = props.picture;
-    var Friends_list = new Map();
+    this.Name = props.Name;
+    this.Password = props.Password;
+    this.Nickname = props.Nickname;
+    this.Picture = props.Picture;
+    this.Friends_Chat_List = new Map();
   }
 
   getName() {
@@ -25,44 +25,68 @@ class User {
     return this.Picture;
   }
 
+  getFriends_Chat_List() {
+    return this.Friends_Chat_List;
+  }
+
+  getFriend_Chat_List(Name) {
+    return this.Friends_Chat_List.get(Name);
+  }
+
   IsYourFriend(Name) {
-    return this.Friends_list.get(Name) != null;
+    return this.Friends_Chat_List.get(Name) != null;
   }
 
   getLastMsgFrom(Name) {
-    if (IsYourFriend(Name)) {
-      return this.Friends_list.get(Name).Chat[-1].text;
+    if (this.IsYourFriend(Name)) {
+      return this.Friends_Chat_List.get(Name)[
+        this.Friends_Chat_List.get(Name).length - 1
+      ].text;
+    }
+  }
+
+  isChatWith(Name) {
+    if (this.IsYourFriend(Name)) {
+      return this.Friends_Chat_List.get(Name).length >= 1;
     }
   }
 
   getLastTimeFrom(Name) {
-    if (IsYourFriend(Name)) {
-      return this.Friends_list.get(Name).Chat[-1].time;
+    if (this.IsYourFriend(Name)) {
+      return this.Friends_Chat_List.get(Name)[
+        this.Friends_Chat_List.get(Name).length - 1
+      ].time;
     }
   }
 
-  AddNewFriend(Name){
-    if (!IsYourFriend(Name)) {
-        this.Friends_list.set(Name, {
-            Nickname: users.get(Name).Nickname,
-            Picture: users.get(Name).Picture,
-            Chat : []
-          })
-        
-          users.get(Name).Friends_list.set(this.Name, {
-            Nickname: this.getNickname,
-            Picture: this.getPicture,
-            Chat : this.Friends_list.get(Name).Chat;
-          })
+  AddNewFriend(Name) {
+    if (!this.IsYourFriend(Name)) {
+      this.Friends_Chat_List.set(Name, []);
+      console.log(this.getName() + " add " + Name);
 
-      }
+      //   users
+      //     .get(Name)
+      //     .Friends_Chat_List.set(this.Name, this.Friends_Chat_List.get(Name));
+    }
+    return "OK";
+  }
+
+  AddNewMsgTo(Name, text, time) {
+    if (this.IsYourFriend(Name)) {
+      this.Friends_Chat_List.get(Name).push({
+        from: this.getName(),
+        to: Name,
+        text: text,
+        time: time,
+      });
+    }
   }
 
   AddNewMsgFrom(Name, text, time) {
-    if (IsYourFriend(Name)) {
-      this.Friends_list(Name).Chat.push({
-        from: this.getName,
-        to: Name,
+    if (this.IsYourFriend(Name)) {
+      this.Friends_Chat_List.get(Name).push({
+        from: Name,
+        to: this.getName(),
         text: text,
         time: time,
       });
