@@ -1,10 +1,12 @@
 import "./Register.css";
 import users from "../Users_data/Users";
+import User from "../User";
 
 import { Link } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
-function Register() {
+
+function Register(props) {
   const Name_input = useRef(null);
   const Password_input = useRef(null);
   const Verify_password_input = useRef(null);
@@ -141,14 +143,21 @@ function Register() {
       return;
     }
 
-    users.set(Name_input.current.value, {
-      Password: Password_input.current.value,
-      Nickname: Nickname_input.current.value,
-      Picture: Picture_input.current.value,
-    });
+    users.set(Name_input.current.value, 
+      new User({
+        Name: Name_input.current.value,
+        Password: Password_input.current.value,
+        Nickname: Nickname_input.current.value,
+        Picture: URL.createObjectURL(Picture_input.current.files[0]),
+      })
+
+    );
     console.log("user added succesfuly!");
+    console.log("01 " + users.get(Name_input.current.value).getPicture());
+
     Enter_link.current.click();
   };
+
 
   return (
     <>
@@ -235,6 +244,7 @@ function Register() {
               ref={Picture_input}
               onChange={() => {
                 const file = Picture_input.current.files;
+                props.SetFile(file[0]);
                 imagesArray.push(file[0]);
                 displayImages();
               }}
