@@ -17,6 +17,10 @@ function New_contact_modal(props) {
     }
   }
 
+  function cleanError() {
+    document.getElementById("errorsModals").innerHTML = ""
+  }
+
   useEffect(() => {
     contactInput.current.addEventListener("keypress", function (event) {
       PressEnter(event);
@@ -26,14 +30,15 @@ function New_contact_modal(props) {
   function addContact() {
     var name = contactInput.current.value;
     if(users.get(name) == null ) {
-      console.log("no such contact");
-
-      return ///no such contact
+      document.getElementById("errorsModals").innerHTML = "&ensp;no such contact"
+      contactInput.current.addEventListener("input", cleanError);
+      return;
     }
 
     if (users.get(props.LoggedUser).IsYourFriend(name)) {
-      console.log("already your friend");
-      return ///already your friend
+      document.getElementById("errorsModals").innerHTML = "&ensp;contact is already your friend";
+      contactInput.current.addEventListener("input", cleanError);
+      return;
     }
     users.get(name).AddNewFriend(props.LoggedUser);
     users.get(props.LoggedUser).AddNewFriend(name);
@@ -72,9 +77,10 @@ function New_contact_modal(props) {
             <div className="modal-body">
               <input
                 type="text"
-                placeholder="Contact's identifier"
+                placeholder="Enter contact's name"
                 ref={contactInput}
               ></input>
+              <div id="errorsModals"></div>
             </div>
             <div className="modal-footer">
               <button
