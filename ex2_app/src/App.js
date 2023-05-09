@@ -7,6 +7,8 @@ import Login from "./Login/Login";
 
 function App() {
   const [LoggedUser, SetLoggedUser] = useState("");
+  const [file, SetFile] = useState("");
+
 
   return (
     <BrowserRouter>
@@ -15,10 +17,10 @@ function App() {
           path="/"
           element={<Login SetLoggedUser={SetLoggedUser} />}
         ></Route>
-        <Route path="/Register" element={<Register />}></Route>
+        <Route path="/Register" element={<Register SetFile={SetFile}/>}></Route>
         <Route
           path="/Main_screen"
-          element={<Main_screen LoggedUser={LoggedUser} />}
+          element={<Main_screen LoggedUser={LoggedUser} file={file}/>}
         ></Route>
       </Routes>
     </BrowserRouter>

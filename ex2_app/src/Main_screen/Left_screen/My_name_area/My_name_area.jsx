@@ -1,11 +1,19 @@
 import "./My_name_area.css";
 import users from "../../../Users_data/Users";
+import Register from "../../../Register/Register";
+import { useRef, useEffect } from "react";
+
 
 function My_name_area(props) {
+  let imagesArray2 = [];
+
+
   return (
     <>
+
       <div id="my_name_area" className={props.Mode}>
-        <img src={users.get(props.LoggedUser).getPicture()}></img>
+        <img src={users.get(props.LoggedUser).getPicture()} alt="" ></img>
+
         <span id="my_name">{users.get(props.LoggedUser).getNickname()}</span>
         <button
           id="add_button"

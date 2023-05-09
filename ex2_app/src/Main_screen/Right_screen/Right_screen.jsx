@@ -5,7 +5,6 @@ import Input_area from "./Input_area/Input_area";
 import { useState } from "react";
 
 function Right_screen(props) {
-  const [Details, SetDetails] = useState(true);
 
   return (
     <>
@@ -21,8 +20,8 @@ function Right_screen(props) {
           Mode={props.Mode}
         />
         <Input_area
-          setState={SetDetails}
-          state={Details}
+          setState={props.setState}
+          state={props.state}
           LoggedUser={props.LoggedUser}
           CurrentFriend={props.CurrentFriend}
           Mode={props.Mode}

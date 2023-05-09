@@ -60,4 +60,11 @@
     border-color: #b32d3a;
 }
 
+#errorsModals {
+    color: rgba(255, 78, 78, 0.735);
+    position: relative;
+    tab-size: 8;
+    line-height: 1.3;
+}
+
 
