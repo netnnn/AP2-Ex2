@@ -6,6 +6,8 @@ import Right_screen from "./Right_screen/Right_screen";
 function Main_screen(props) {
   const [CurrentFriend, SetCurrentFriend] = useState("");
 
+  const [Mode, SetMode] = useState("");
+
   var logged = props.LoggedUser;
 
 
@@ -14,10 +16,13 @@ function Main_screen(props) {
       <Left_screen
         LoggedUser={logged}
         SetCurrentFriend={SetCurrentFriend}
+        Mode={Mode}
       />
       <Right_screen
         LoggedUser={logged}
         CurrentFriend={CurrentFriend}
+        Mode={Mode}
+        SetMode={SetMode}
       />
     </>
   );

@@ -25,12 +25,13 @@ function Chat_area(props) {
             time={msg.time}
             msg={msg.text}
             key={key}
+            Mode={props.Mode}
           />
         ));
     }
   }
 
-  return <div id="chat_area">{msg_items}</div>;
+  return <div id="chat_area" className={props.Mode}>{msg_items}</div>;
 }
 
 export default Chat_area;
