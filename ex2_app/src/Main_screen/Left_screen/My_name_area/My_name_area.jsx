@@ -10,8 +10,10 @@ function My_name_area(props) {
 
   return (
     <>
-      <div id="my_name_area" className="">
-        <img src={users.get(props.LoggedUser).getPicture()} alt="" />
+
+      <div id="my_name_area" className={props.Mode}>
+        <img src={users.get(props.LoggedUser).getPicture()} alt="" ></img>
+
         <span id="my_name">{users.get(props.LoggedUser).getNickname()}</span>
         <button
           id="add_button"

@@ -8,6 +8,8 @@ function Main_screen(props) {
   const [state, RENDER] = useState(true);
 
 
+  const [Mode, SetMode] = useState("");
+
   var logged = props.LoggedUser;
 
 
@@ -19,12 +21,15 @@ function Main_screen(props) {
         file={props.file}
         setState={RENDER}
         state={state}
+        Mode={Mode}
       />
       <Right_screen
         LoggedUser={logged}
         CurrentFriend={CurrentFriend}
         setState={RENDER}
         state={state}
+        Mode={Mode}
+        SetMode={SetMode}
       />
     </>
   );
