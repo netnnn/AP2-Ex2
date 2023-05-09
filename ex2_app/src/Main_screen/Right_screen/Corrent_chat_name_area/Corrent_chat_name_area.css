@@ -38,3 +38,13 @@
     margin: auto;
 }
 
+/* light_mode */
+
+
+#corrent_chat_name_area.light_mode {
+
+    background-color: rgb(181, 25, 25);
+
+
+}
+

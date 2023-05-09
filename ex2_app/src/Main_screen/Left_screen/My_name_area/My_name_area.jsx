@@ -4,7 +4,7 @@ import users from "../../../Users_data/Users";
 function My_name_area(props) {
   return (
     <>
-      <div id="my_name_area" className="">
+      <div id="my_name_area" className={props.Mode}>
         <img src={users.get(props.LoggedUser).getPicture()}></img>
         <span id="my_name">{users.get(props.LoggedUser).getNickname()}</span>
         <button

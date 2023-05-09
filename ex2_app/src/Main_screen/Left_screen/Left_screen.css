@@ -26,3 +26,11 @@ img {
 
 }
 
+/* light_mode */
+
+#left_screen.light_mode {
+   
+    background-color: rgb(128, 58, 58);
+   
+}
+

@@ -10,16 +10,22 @@ function Right_screen(props) {
   return (
     <>
       <div id="right_screen" className="col col-8">
-        <Corrent_chat_name_area CurrentFriend={props.CurrentFriend} />
+        <Corrent_chat_name_area
+          CurrentFriend={props.CurrentFriend}
+          Mode={props.Mode}
+          SetMode={props.SetMode}
+        />
         <Chat_area
           LoggedUser={props.LoggedUser}
           CurrentFriend={props.CurrentFriend}
+          Mode={props.Mode}
         />
         <Input_area
           setState={SetDetails}
           state={Details}
           LoggedUser={props.LoggedUser}
           CurrentFriend={props.CurrentFriend}
+          Mode={props.Mode}
         />
       </div>
     </>

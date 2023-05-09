@@ -15,3 +15,17 @@
   overflow: auto;
 
 }
+
+
+
+
+/* light_mode */
+
+#chat_area.light_mode {
+
+  background-color: rgb(164, 248, 160);
+  border-top-color: #b0b0b049;
+
+  overflow: auto;
+
+}
