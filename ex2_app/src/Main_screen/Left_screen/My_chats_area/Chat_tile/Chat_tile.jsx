@@ -1,11 +1,10 @@
 import "./Chat_tile.css";
 
 function Chat_tile(props, key) {
-
-const SetCurrentFriend = () => {
-  props.SetCurrentFriend(props.Name);
-}
-
+  const SetCurrentFriend = () => {
+    props.SetCurrentFriend(props.Name);
+    console.log(props.Name + " is watched");
+  };
 
   return (
     <>

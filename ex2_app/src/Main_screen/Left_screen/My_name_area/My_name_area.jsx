@@ -1,11 +1,12 @@
 import "./My_name_area.css";
+import users from "../../../Users_data/Users";
 
-function My_name_area() {
+function My_name_area(props) {
   return (
     <>
       <div id="my_name_area" className="">
-        <img src="L-profile.jpg"></img>
-        <span id="my_name">L</span>
+        <img src={users.get(props.LoggedUser).getPicture()}></img>
+        <span id="my_name">{users.get(props.LoggedUser).getNickname()}</span>
         <button
           id="add_button"
           type="button"
@@ -17,7 +18,6 @@ function My_name_area() {
           <i className="bi bi-person-add"></i>
         </button>
       </div>
-      {/* <!-- #type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" --> */}
     </>
   );
 }

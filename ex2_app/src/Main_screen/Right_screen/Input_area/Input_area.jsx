@@ -2,7 +2,6 @@ import "./Input_area.css";
 import users from "../../../Users_data/Users";
 
 import { useRef, useState, useEffect } from "react";
-// import the_list from "../../../Chats";
 
 function Input_area(props) {
   const input_area = useRef(null);
@@ -74,20 +73,6 @@ function Input_area(props) {
       </div>
     );
   }
-
-  return (
-    <div id="input_area" ref={input_area}>
-      <input
-        className="col-9 col-xl-11 col-lg-10 col-md-10 col-sm-10"
-        type="text"
-        placeholder="New message here..."
-        ref={input}
-      ></input>
-      <button className="btn btn-primary" onClick={Send_msg} ref={btn_ref}>
-        <i className="bi bi-send"></i>
-      </button>
-    </div>
-  );
 }
 
 export default Input_area;
