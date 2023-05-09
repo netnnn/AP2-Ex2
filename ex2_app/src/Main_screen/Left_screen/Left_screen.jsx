@@ -7,14 +7,17 @@ function Left_screen(props) {
   return (
     <>
       <div id="left_screen" className="col col-4">
-        <My_name_area LoggedUser={props.LoggedUser} 
-        file={props.file}/>
+        <My_name_area LoggedUser={props.LoggedUser} file={props.file} />
         <My_chats_area
           LoggedUser={props.LoggedUser}
           SetCurrentFriend={props.SetCurrentFriend}
         />
       </div>
-      <New_contact_modal />
+      <New_contact_modal
+        LoggedUser={props.LoggedUser}
+        setState={props.setState}
+        state={props.state}
+      />
     </>
   );
 }

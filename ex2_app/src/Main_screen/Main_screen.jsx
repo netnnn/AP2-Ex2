@@ -5,6 +5,8 @@ import Right_screen from "./Right_screen/Right_screen";
 
 function Main_screen(props) {
   const [CurrentFriend, SetCurrentFriend] = useState("");
+  const [state, RENDER] = useState(true);
+
 
   var logged = props.LoggedUser;
 
@@ -15,10 +17,14 @@ function Main_screen(props) {
         LoggedUser={logged}
         SetCurrentFriend={SetCurrentFriend}
         file={props.file}
+        setState={RENDER}
+        state={state}
       />
       <Right_screen
         LoggedUser={logged}
         CurrentFriend={CurrentFriend}
+        setState={RENDER}
+        state={state}
       />
     </>
   );
