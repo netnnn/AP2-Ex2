@@ -22,6 +22,10 @@ function My_name_area(props) {
           data-bs-toggle="modal"
           data-bs-target="#add_new_contact_modal"
           aria-hidden="true"
+          onClick= {() => {
+            document.getElementById("errorsModals").innerHTML = "";
+            document.getElementById("contactInput").value = "";
+          }}
         >
           <i className="bi bi-person-fill-add"></i>
         </button>

@@ -72,6 +72,7 @@ function New_contact_modal(props) {
                 data-bs-dismiss="modal"
                 aria-label="Close"
                 ref={close}
+                onClick={cleanError}
               ></button>
             </div>
             <div className="modal-body">
@@ -79,6 +80,7 @@ function New_contact_modal(props) {
                 type="text"
                 placeholder="Enter contact's name"
                 ref={contactInput}
+                id="contactInput"
               ></input>
               <div id="errorsModals"></div>
             </div>
@@ -88,6 +90,7 @@ function New_contact_modal(props) {
                 id="cancel"
                 className="btn btn-danger"
                 data-bs-dismiss="modal"
+                onClick={cleanError}
               >
                 Cancel
               </button>
