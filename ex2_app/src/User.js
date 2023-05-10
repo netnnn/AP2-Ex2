@@ -7,6 +7,8 @@ class User {
     this.Nickname = props.Nickname;
     this.Picture = props.Picture;
     this.Friends_Chat_List = new Map();
+    this.Friends_names = []
+    this.Light_mode = false;
   }
 
   getName() {
@@ -32,6 +34,19 @@ class User {
   getFriend_Chat_List(Name) {
     return this.Friends_Chat_List.get(Name);
   }
+
+  getFriends_Names() {
+    return this.Friends_names;
+  }
+
+  getLight_mode() {
+    return this.Light_mode;
+  }
+
+  setLight_mode() {
+    this.Light_mode = !this.Light_mode;
+  }
+
 
   IsYourFriend(Name) {
     return this.Friends_Chat_List.get(Name) != null;
@@ -62,6 +77,13 @@ class User {
   AddNewFriend(Name) {
     if (!this.IsYourFriend(Name)) {
       this.Friends_Chat_List.set(Name, []);
+      this.Friends_names.push(Name)
+      if (this.getFriends_Names().length >= 2){
+        var first = Name;
+        this.getFriends_Names().sort(function (x, y) {
+          return x == first ? -1 : y == first ? 1 : 0;
+        });
+      }
       console.log(this.getName() + " add " + Name);
 
       //   users
@@ -79,6 +101,15 @@ class User {
         text: text,
         time: time,
       });
+
+      if (this.getFriends_Names().length >= 2){
+        var first = Name;
+        this.getFriends_Names().sort(function (x, y) {
+          return x == first ? -1 : y == first ? 1 : 0;
+        });
+      }
+
+
     }
   }
 
@@ -90,6 +121,18 @@ class User {
         text: text,
         time: time,
       });
+
+      console.log("array of")
+
+      if (this.getFriends_Names().length >= 2){
+        var first = Name;
+        this.getFriends_Names().sort(function (x, y) {
+          return x == first ? -1 : y == first ? 1 : 0;
+        });
+      }
+
+
+
     }
   }
 }

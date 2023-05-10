@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 function Corrent_chat_name_area(props) {
   const handle_click = () => {
     props.Mode == "" ? props.SetMode(" light_mode ") : props.SetMode("");
+    users.get(props.LoggedUser).setLight_mode();
     console.log("color");
   };
 
-  if (props.CurrentFriend == "") {
+  users.get(props.LoggedUser).getLight_mode()? props.SetMode(" light_mode ") : props.SetMode("");
 
+  if (props.CurrentFriend == "") {
 
     return (
       <>
