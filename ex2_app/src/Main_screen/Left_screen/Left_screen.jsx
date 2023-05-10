@@ -13,6 +13,7 @@ function Left_screen(props) {
         <My_chats_area
           LoggedUser={props.LoggedUser}
           SetCurrentFriend={props.SetCurrentFriend}
+          CurrentFriend={props.CurrentFriend}
           Mode={props.Mode}
         />
       </div>

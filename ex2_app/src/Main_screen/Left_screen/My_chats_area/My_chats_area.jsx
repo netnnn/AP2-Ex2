@@ -5,6 +5,9 @@ import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function My_chats_area(props) {
+
+  // const [activeFriend, SetActiveFriend] = useState("")
+
   const Exit_link = useRef(null);
 
   // works in refresh
@@ -12,36 +15,9 @@ function My_chats_area(props) {
     window.location.href = "/";
   }
 
-  var { chats_items } = "<div></div>";
+  var chats_items = "<div></div>";
 
   console.log(props.LoggedUser + " this");
-
-  // if (users.get(props.LoggedUser) != null) {
-  //   if (users.get(props.LoggedUser).Friends_Chat_List != null) {
-  //     chats_items = Array.from(
-  //       users.get(props.LoggedUser).getFriends_Chat_List()
-  //     ).map(([key, array]) => (
-  //       <Chat_tile
-  //         img={users.get(key).getPicture()}
-  //         Nickname={users.get(key).getNickname()}
-  //         Name={users.get(key).getName()}
-  //         key={key}
-  //         last={
-  //           users.get(key).isChatWith(props.LoggedUser)
-  //             ? users.get(key).getLastMsgFrom(props.LoggedUser)
-  //             : ""
-  //         }
-  //         date={
-  //           users.get(key).isChatWith(props.LoggedUser)
-  //             ? users.get(key).getLastTimeFrom(props.LoggedUser)
-  //             : ""
-  //         }
-  //         SetCurrentFriend={props.SetCurrentFriend}
-  //       />
-  //     ));
-  //   }
-  // }
-
 
 
   if (users.get(props.LoggedUser) != null) {
@@ -52,6 +28,7 @@ function My_chats_area(props) {
           Nickname={users.get(Name).getNickname()}
           Name={users.get(Name).getName()}
           key={Name}
+          CurrentFriend={props.CurrentFriend}
           last={
             users.get(Name).isChatWith(props.LoggedUser)
               ? users.get(Name).getLastMsgFrom(props.LoggedUser)
@@ -63,6 +40,7 @@ function My_chats_area(props) {
               : ""
           }
           SetCurrentFriend={props.SetCurrentFriend}
+          
         />
       ));
     }

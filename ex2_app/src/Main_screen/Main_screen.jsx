@@ -18,6 +18,7 @@ function Main_screen(props) {
       <Left_screen
         LoggedUser={logged}
         SetCurrentFriend={SetCurrentFriend}
+        CurrentFriend={CurrentFriend}
         file={props.file}
         setState={RENDER}
         state={state}

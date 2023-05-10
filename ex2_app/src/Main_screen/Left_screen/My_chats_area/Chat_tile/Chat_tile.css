@@ -3,12 +3,9 @@
     border-style: solid;
     border-color: #b0b0b049;
     /* border-radius: 6pt; */
-
     background-color: #111b21;
-
     height: 70px;
     width: 100%;
-
     position: relative;
     align-items: center;
     display: flex;
@@ -20,6 +17,11 @@
 
 .chat_tile:active {
     background-color: #192832;
+}
+
+.active {
+    background-color: #3b5d7297;
+
 }
 
 .chat_tile>img {
