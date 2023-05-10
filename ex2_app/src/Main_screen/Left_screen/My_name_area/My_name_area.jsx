@@ -14,7 +14,7 @@ function My_name_area(props) {
       <div id="my_name_area" className={props.Mode}>
         <img src={users.get(props.LoggedUser).getPicture()} alt="" ></img>
 
-        <span id="my_name">{users.get(props.LoggedUser).getNickname()}</span>
+        <span id="my_name" className={props.Mode}>{users.get(props.LoggedUser).getNickname()}</span>
         <button
           id="add_button"
           type="button"
@@ -23,7 +23,7 @@ function My_name_area(props) {
           data-bs-target="#add_new_contact_modal"
           aria-hidden="true"
         >
-          <i className="bi bi-person-add"></i>
+          <i className="bi bi-person-fill-add"></i>
         </button>
       </div>
     </>

@@ -29,8 +29,12 @@ img {
 /* light_mode */
 
 #left_screen.light_mode {
-   
-    background-color: rgb(128, 58, 58);
-   
+
+    border-right-width: 1px;
+
+    background-color: #058175;
+    border-right-color: #0a675e;
+    border-top-color: #058175;
+    border-bottom-color: #058175;
 }
 
