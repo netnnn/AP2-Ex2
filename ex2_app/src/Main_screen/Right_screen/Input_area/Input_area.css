@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+#input_area.light_mode {
+    background-color: rgb(255, 255, 255);
+}
+
 #input_area>input {
     position: relative;
     height: 76%;

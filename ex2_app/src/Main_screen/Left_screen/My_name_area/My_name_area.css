@@ -10,6 +10,14 @@
 
 }
 
+#my_name_area.light_mode {
+    background-color: #058175;
+    border-bottom-color: #000000;
+    border-top-color: #058175;
+    border-right-color: #0a675e;
+
+}
+
 #my_name_area img {
     border-radius: 100%;
     position: relative;
@@ -27,7 +35,7 @@
     width: 100%;
     text-align: start;
     margin: 5%;
-    color: rgb(223, 223, 223);
+    color: rgb(255, 255, 255);
     font-family: serif;
 
 }

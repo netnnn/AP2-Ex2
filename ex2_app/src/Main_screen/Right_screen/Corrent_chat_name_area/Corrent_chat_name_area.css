@@ -26,9 +26,11 @@
     text-align: left;
     margin-left: 15px;
     font-family: serif;
-    color: rgb(223, 223, 223);
+    color: rgb(255, 255, 255);
 
 }
+
+
 
 .logout {
     position: relative;
@@ -38,13 +40,20 @@
     margin: auto;
 }
 
+.color {
+    position: relative;
+    right: 30px;
+}
+
 /* light_mode */
 
 
 #corrent_chat_name_area.light_mode {
 
-    background-color: rgb(181, 25, 25);
+    background-color: #058175;
+    border-bottom-color: black;
 
 
 }
+
 

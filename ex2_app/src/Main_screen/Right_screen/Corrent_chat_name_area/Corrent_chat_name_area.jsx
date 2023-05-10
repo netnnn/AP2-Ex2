@@ -17,10 +17,12 @@ function Corrent_chat_name_area(props) {
       <>
         <div id="corrent_chat_name_area" className={props.Mode}>
           <span className="friend_name col"></span>
-          <button onClick={handle_click} className="btn btn-primary">color</button>
+          <button onClick={handle_click} className="btn btn-primary color">
+          <i class="bi bi-brightness-high-fill"></i>
+          </button>
           <Link to="/">
             <button className="btn btn-danger logout">
-              <i className="bi bi-box-arrow-right"></i>
+            <i className="bi bi-box-arrow-right"></i>
             </button>
           </Link>
         </div>
@@ -34,7 +36,9 @@ function Corrent_chat_name_area(props) {
           <span className="friend_name col">
             {users.get(props.CurrentFriend).getNickname()}
           </span>
-          <button onClick={handle_click} className="btn btn-primary">color</button>
+          <button onClick={handle_click} className="btn btn-primary color">
+            <i class="bi bi-brightness-high-fill"></i>
+          </button>
           <Link to="/">
             <button className="btn btn-danger logout">
               <i className="bi bi-box-arrow-right"></i>
