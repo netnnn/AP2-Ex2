@@ -25,7 +25,7 @@ function Chat_tile(props, key) {
       <div className={"chat_tile " + active_tile} key={key} onClick={SetCurrentFriend}>
         <img id="others_profile" src={props.img}></img>
         <div className="friend_name_and_last col">
-          <span>{props.Nickname}</span>
+          <span>{props.Name==props.LoggedUser? "You": props.Nickname}</span>
           <p className="last_msg">{props.last}</p>
         </div>
         <span class={props.unread != 0?"circle ":"" }>{props.unread != 0?props.unread:""}</span>

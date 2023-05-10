@@ -48,6 +48,7 @@ function My_chats_area(props) {
               : ""
           }
           SetCurrentFriend={props.SetCurrentFriend}
+          LoggedUser={props.LoggedUser}
           
         />
       ));

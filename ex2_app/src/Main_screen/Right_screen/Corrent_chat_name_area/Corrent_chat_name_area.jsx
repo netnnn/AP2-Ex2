@@ -34,7 +34,7 @@ function Corrent_chat_name_area(props) {
         <div id="corrent_chat_name_area" className={props.Mode}>
           <img src={users.get(props.CurrentFriend).getPicture()}></img>
           <span className="friend_name col">
-            {users.get(props.CurrentFriend).getNickname()}
+            {props.CurrentFriend==props.LoggedUser?"You": users.get(props.CurrentFriend).getNickname()}
           </span>
           <button id="sun" onClick={handle_click} className="btn color btn-lg btn-dark">
           <i className="bi bi-brightness-high-fill" onAbort={handle_click}></i>
