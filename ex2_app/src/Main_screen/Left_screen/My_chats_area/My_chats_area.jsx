@@ -16,24 +16,50 @@ function My_chats_area(props) {
 
   console.log(props.LoggedUser + " this");
 
+  // if (users.get(props.LoggedUser) != null) {
+  //   if (users.get(props.LoggedUser).Friends_Chat_List != null) {
+  //     chats_items = Array.from(
+  //       users.get(props.LoggedUser).getFriends_Chat_List()
+  //     ).map(([key, array]) => (
+  //       <Chat_tile
+  //         img={users.get(key).getPicture()}
+  //         Nickname={users.get(key).getNickname()}
+  //         Name={users.get(key).getName()}
+  //         key={key}
+  //         last={
+  //           users.get(key).isChatWith(props.LoggedUser)
+  //             ? users.get(key).getLastMsgFrom(props.LoggedUser)
+  //             : ""
+  //         }
+  //         date={
+  //           users.get(key).isChatWith(props.LoggedUser)
+  //             ? users.get(key).getLastTimeFrom(props.LoggedUser)
+  //             : ""
+  //         }
+  //         SetCurrentFriend={props.SetCurrentFriend}
+  //       />
+  //     ));
+  //   }
+  // }
+
+
+
   if (users.get(props.LoggedUser) != null) {
     if (users.get(props.LoggedUser).Friends_Chat_List != null) {
-      chats_items = Array.from(
-        users.get(props.LoggedUser).getFriends_Chat_List()
-      ).map(([key, array]) => (
+      chats_items = users.get(props.LoggedUser).getFriends_Names().map((Name) => (
         <Chat_tile
-          img={users.get(key).getPicture()}
-          Nickname={users.get(key).getNickname()}
-          Name={users.get(key).getName()}
-          key={key}
+          img={users.get(Name).getPicture()}
+          Nickname={users.get(Name).getNickname()}
+          Name={users.get(Name).getName()}
+          key={Name}
           last={
-            users.get(key).isChatWith(props.LoggedUser)
-              ? users.get(key).getLastMsgFrom(props.LoggedUser)
+            users.get(Name).isChatWith(props.LoggedUser)
+              ? users.get(Name).getLastMsgFrom(props.LoggedUser)
               : ""
           }
           date={
-            users.get(key).isChatWith(props.LoggedUser)
-              ? users.get(key).getLastTimeFrom(props.LoggedUser)
+            users.get(Name).isChatWith(props.LoggedUser)
+              ? users.get(Name).getLastTimeFrom(props.LoggedUser)
               : ""
           }
           SetCurrentFriend={props.SetCurrentFriend}

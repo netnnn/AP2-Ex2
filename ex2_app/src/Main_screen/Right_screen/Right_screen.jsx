@@ -13,6 +13,7 @@ function Right_screen(props) {
           CurrentFriend={props.CurrentFriend}
           Mode={props.Mode}
           SetMode={props.SetMode}
+          LoggedUser={props.LoggedUser}
         />
         <Chat_area
           LoggedUser={props.LoggedUser}
