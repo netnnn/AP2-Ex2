@@ -7,7 +7,7 @@
 }
 
 #input_area.light_mode {
-    background-color: rgb(255, 255, 255);
+    background-color: wheat;
 }
 
 #input_area>input {
@@ -20,10 +20,16 @@
 }
 
 #input_area>button {
-    /* position: relative; */
+    position: relative;
     border-radius: 50%;
+    /* top: 0px; */
+    /* bottom: 0px; */
+    /* right: 0px; */
+    /* left: 0px; */
+    margin: auto;
     margin-bottom: 5px;
-    background-color: rgba(168, 110, 219, 0.349);
+    margin-left: 10px;
+    background-color: rgb(102, 138, 255);
 
     border: 1px;
     /* width: 10%; */

@@ -93,10 +93,10 @@
 
 .mine.light_mode .message {
   color: rgb(0, 0, 0) !important;
-  background-color: #12e799 !important;
+  background-color: #acfcac !important;
 }
 
 .yours.light_mode .message {
   color: rgb(0, 0, 0) !important;
-  background: #988aff !important;
+  background: rgb(255, 255, 255) !important;
 }

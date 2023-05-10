@@ -11,9 +11,9 @@
 }
 
 #my_name_area.light_mode {
-    background-color: #058175;
-    border-bottom-color: #000000;
-    border-top-color: #058175;
+    background-color: #00a884;
+    border-bottom-color: #b0b0b049;
+    border-top-color: #00a884;
     border-right-color: #0a675e;
 
 }
@@ -62,7 +62,5 @@
 }
 
 #add_button:active {
-    background-color: rgb(29, 29, 29);
+    background-color: rgba(184, 184, 184, 0.208);
 }
-
-
