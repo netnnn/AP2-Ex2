@@ -14,6 +14,7 @@ function Chat_tile(props, key) {
     props.SetCurrentFriend(props.Name);
     console.log(props.Name + " is watched");
     handleClick()
+    
   };
 
 

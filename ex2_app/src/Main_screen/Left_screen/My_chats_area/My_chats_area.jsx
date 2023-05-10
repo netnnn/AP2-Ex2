@@ -17,6 +17,7 @@ function My_chats_area(props) {
     users.get(props.LoggedUser).getFriends_Names().forEach(element => {
       if (element.Name == props.CurrentFriend){
         element.unread = 0;
+        
       }
     });
   }

@@ -109,6 +109,8 @@ class User {
         });
       }
 
+      this.getFriends_Names()[0].unread=0;
+
 
     }
   }
