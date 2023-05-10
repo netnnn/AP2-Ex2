@@ -133,7 +133,7 @@ easy_msg("Unknown", "matsuda", "Matsuda, we are making progress in our investiga
 
 easy_msg("matsuda", "Unknown", " I understand, L. I just wanted to make sure that we're doing everything we can to catch Kira.", "15:28");
 
-easy_msg("Unknown", "matsuda", " Of course, Matsuda. We are all working tirelessly to bring Kira to justice. Thank you for your continued dedication to this case.", "17:51");
+easy_msg("Unknown", "matsuda", " Of course, Matsuda. We are all working tirelessly to bring Kira to justice. Thank you for your continued dedication to this case.", "15:51");
 
 
 
@@ -180,11 +180,11 @@ easy_msg("yagami", "Unknown", "Lets catch this murderer!", "18:12");
 
 easy_msg("misa", "yagami", " Light, it's been weeks since we last went on a date. Don't you miss spending time with me?", "19:21");
 
-easy_msg("yagami", "Unknown", "Misa, we've been over this before. I have other things to focus on right now.", "19:27");
+easy_msg("yagami", "misa", "Misa, we've been over this before. I have other things to focus on right now.", "19:27");
 
 easy_msg("misa", "yagami", "But I feel like I'm not a priority in your life anymore. Can't we just go out tonight?", "19:27");
 
-easy_msg("yagami", "Unknown", "I'm sorry, Misa, but I can't. There's something I need to take care of. Maybe another time.", "19:33");
+easy_msg("yagami", "misa", "I'm sorry, Misa, but I can't. There's something I need to take care of. Maybe another time.", "19:33");
 
 
 

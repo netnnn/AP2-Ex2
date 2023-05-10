@@ -45,9 +45,13 @@ function Input_area(props) {
     users
       .get(props.LoggedUser)
       .AddNewMsgTo(props.CurrentFriend, input.current.value, NowTime);
-    users
-      .get(props.CurrentFriend)
-      .AddNewMsgFrom(props.LoggedUser, input.current.value, NowTime);
+
+      if(props.LoggedUser != props.CurrentFriend){
+        users
+        .get(props.CurrentFriend)
+        .AddNewMsgFrom(props.LoggedUser, input.current.value, NowTime);
+      }
+
 
     props.setState(!props.state);
     input.current.value = "";
