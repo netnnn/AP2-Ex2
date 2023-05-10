@@ -77,11 +77,11 @@ class User {
   AddNewFriend(Name) {
     if (!this.IsYourFriend(Name)) {
       this.Friends_Chat_List.set(Name, []);
-      this.Friends_names.push(Name)
+      this.Friends_names.push({"Name" : Name, "unread": 0})
       if (this.getFriends_Names().length >= 2){
         var first = Name;
         this.getFriends_Names().sort(function (x, y) {
-          return x == first ? -1 : y == first ? 1 : 0;
+          return x.Name == first ? -1 : y.Name == first ? 1 : 0;
         });
       }
       console.log(this.getName() + " add " + Name);
@@ -105,7 +105,7 @@ class User {
       if (this.getFriends_Names().length >= 2){
         var first = Name;
         this.getFriends_Names().sort(function (x, y) {
-          return x == first ? -1 : y == first ? 1 : 0;
+          return x.Name == first ? -1 : y.Name == first ? 1 : 0;
         });
       }
 
@@ -122,14 +122,14 @@ class User {
         time: time,
       });
 
-      console.log("array of")
-
+    
       if (this.getFriends_Names().length >= 2){
         var first = Name;
         this.getFriends_Names().sort(function (x, y) {
-          return x == first ? -1 : y == first ? 1 : 0;
+          return x.Name == first ? -1 : y.Name == first ? 1 : 0;
         });
       }
+      this.getFriends_Names()[0].unread++;
 
 
 

@@ -25,7 +25,7 @@ function Chat_tile(props, key) {
         <img src={props.img}></img>
         <div className="friend_name_and_last col">
           <span>{props.Nickname}</span>
-          <p className="last_msg">{props.last}</p>
+          <p className="last_msg">{props.last + " UNREAD " + props.unread}</p>
         </div>
         <span className="friend_time col-2">{props.date}</span>
       </div>
