@@ -50,10 +50,54 @@
 
 #corrent_chat_name_area.light_mode {
 
-    background-color: #058175;
+    background-color: #00a884;
     border-bottom-color: black;
 
 
 }
 
+.bi-brightness-high-fill {
+    color: white;
+}
 
+.btn-dark {
+    background-color: #f5f5f500;
+    border: #f5f5f500;
+}
+
+.btn-warning {
+    color: rgb(255, 0, 0);
+    background-color: #00a88400;
+}
+
+.logout:hover {
+    color: rgb(255, 0, 0);
+}
+
+.bi-box-arrow-right{
+    color: rgb(255, 0, 0);
+}
+
+.color:active {
+    border-color: #00a88400;
+    background-color: rgba(184, 184, 184, 0.208);
+}
+
+.btn-dark:hover {
+    /* color: rgb(223, 223, 223); */
+    background-color: #f5f5f500;
+}
+
+.btn-dark:active {
+    background-color: rgba(184, 184, 184, 0.208);
+}
+
+#log:active {
+    background-color: rgba(184, 184, 184, 0.208);
+
+}
+
+#sun:active {
+    background-color: rgba(184, 184, 184, 0.208);
+
+}

@@ -20,9 +20,9 @@
 
 #chat_area.light_mode {
 
-  background-color: rgb(255, 255, 255);
-  border-top-color: #ffffff;
-  border-color: #ffffff;
+  background-color: wheat;
+  border-top-color: wheat;
+  border-color: wheat;
 
   overflow: auto;
 
